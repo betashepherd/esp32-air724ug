@@ -36,6 +36,3 @@ GPIO 5  pwrKey    ------>       PEN (Module 0:Power On 1:Power Off)
 V5                ------>       VCC
 
 GND               ------>       GND
-
-Default APN
-    3gnet ----> China Unicom

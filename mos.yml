@@ -1,0 +1,74 @@
+author: Mgos User Community
+description: ESP32 Air724UG with Mongoose OS
+version: 1.0
+
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+# Optional. List of tags for online search.
+tags:
+  - c
+
+includes:
+  - include
+
+# List of files / directories with C sources. No slashes at the end of dir names.
+sources:
+  - src
+
+# List of dirs. Files from these dirs will be copied to the device filesystem
+filesystem:
+  - fs
+
+config_schema:
+  - ["app", "o", {title: "esp32_air740ug"}]
+  - ["app.update_interval", "i", 300, {title: "Update interval in seconds"}]
+  - ["bt.enable", "b", false, {title: "Enable BT"}]
+  - ["wifi.sta.enable", "b", false, {title: "Connect to existing WiFi"}]
+  - ["wifi.sta.ssid", "s", "", {title: "SSID"}]
+  - ["wifi.sta.pass", "s", "", {title: "Password", type: "password"}]
+  - ["wifi.sta.nameserver", "223.5.5.5"]
+  - ["wifi.ap.enable", true]
+  - ["wifi.ap.bandwidth_20mhz", true]
+  - ["wifi.ap.ipv4_nat_enable", true]
+  - ["wifi.ap.ssid", "debug_??????"]
+  - ["wifi.ap.pass", "aA1234567890"]
+  - ["pppos.enable", "b", true, {title: "Enable PPPoS"}]
+  - ["pppos.uart_no", "i", 2, {title: "Which UART to use"}]
+  - ["pppos.baud_rate", "i", 115200, {title: "Baud rate to use for data transfer"}]
+  - ["pppos.rx_gpio", "i", 16, {title: "RX pin; -1 = use default"}]
+  - ["pppos.tx_gpio", "i", 17, {title: "TX pin; -1 = use default"}]
+  - ["pppos.apn", "s", "3gnet", {title: "APN name"}] # default china unicom
+
+cdefs:
+  MGOS_DEFAULT_NAMESERVER: "223.5.5.5"
+
+build_vars:
+  MGOS_LWIP_ENABLE_IPV4_NAT: 1
+  ESP_IDF_SDKCONFIG_OPTS: "${build_vars.ESP_IDF_SDKCONFIG_OPTS} CONFIG_LWIP_MAX_SOCKETS=20"
+
+# List of libraries used by this app, in order of initialisation
+libs:
+  - origin: https://github.com/mongoose-os-libs/boards
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/core
+  - origin: https://github.com/mongoose-os-libs/http-server
+  - origin: https://github.com/mongoose-os-libs/fstab
+  - origin: https://github.com/mongoose-os-libs/provision
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/adc
+  - origin: https://github.com/mongoose-os-libs/i2c
+  - origin: https://github.com/mongoose-os-libs/rpc-loopback
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/mqtt
+  - origin: https://github.com/mongoose-os-libs/sntp
+  - origin: https://github.com/betashepherd/pppos
+
+# Used by the mos tool to catch mos binaries incompatible with this file format
+manifest_version: 2017-09-29

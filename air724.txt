@@ -1,0 +1,36 @@
+http://www.yinerda.com/productinfo/1836027.html
+
+ESP32
+    UART 2
+        GPIO16 RX   --> Air724 TX
+        GPIO17 TX   --> Air724 RX 
+    
+    PwrKey
+        GPIO5       --> Air724 PEN
+
+LOG
+
+[May 28 00:43:11.831] mgos_pppos.c:1048       PPPoS UART2 (RX:16 TX:17 CTS:14 RTS:15), 115200, fc off, APN '3gnet'          
+[May 28 00:43:19.074] mgos_pppos.c:655        Connecting (UART2, APN '3gnet')...
+[May 28 00:43:19.080] mgos_pppos.c:685        Trying to connect to 46001,CHN-UNICOM
+[May 28 00:43:19.465] mgos_pppos.c:281        AirM2M_Air724UG_V401875_LTE_AT, IMEI: 863569068963123
+[May 28 00:43:20.068] Tock uptime: 8.506745
+[May 28 00:43:21.068] Tick uptime: 9.506666
+[May 28 00:43:21.569] mgos_pppos.c:728        Command timed out: AT+CIMI
+[May 28 00:43:21.573] mgos_net.c:86           PPP: connecting
+[May 28 00:43:21.581] ==== Net event: 1313166337 CONNECTING
+[May 28 00:43:21.586] mgos_pppos.c:655        Connecting (UART2, APN '3gnet')...
+[May 28 00:43:21.592] mgos_pppos.c:685        Trying to connect to 46001,CHN-UNICOM
+[May 28 00:43:22.067] Tock uptime: 10.505995
+[May 28 00:43:23.064] mgos_pppos.c:281        AirM2M_Air724UG_V401875_LTE_AT, IMEI: 863569068963123
+[May 28 00:43:23.070] Tick uptime: 11.508954
+[May 28 00:43:23.368] mgos_pppos.c:351        SIM is ready, IMSI: 460060147336031, ICCID: 89860622370006360313
+[May 28 00:43:24.068] Tock uptime: 12.506723
+[May 28 00:43:24.566] mgos_pppos.c:407        Connected to mobile network (home)
+[May 28 00:43:25.068] Tick uptime: 13.506747
+[May 28 00:43:25.762] mgos_pppos.c:446        Operator: 46001,CHN-UNICOM
+[May 28 00:43:25.864] mgos_pppos.c:455        RSSI: -51
+[May 28 00:43:26.068] Tock uptime: 14.506693
+[May 28 00:43:26.164] mgos_pppos.c:802        Starting PPP, user ''
+[May 28 00:43:26.168] mgos_net.c:90           PPP: connected
+[May 28 00:43:26.177] ==== Net event: 1313166338 CONNECTED

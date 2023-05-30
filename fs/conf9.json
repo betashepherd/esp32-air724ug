@@ -1,0 +1,25 @@
+{
+  "board": {
+    "led1": {
+      "active_high": true,
+      "pin": 2
+    }
+  },
+  "mqtt": {
+    "enable": true,
+    "server": "broker.emqx.io:1883",
+    "user": "",
+    "pass": "",
+    "reconnect_timeout_min": 3.000000,
+    "reconnect_timeout_max": 5.000000,
+    "keep_alive": 15
+  },
+  "provision": {
+    "max_state": 3
+  },
+  "sntp": {
+    "server": "cn.pool.ntp.org",
+    "retry_max": 3,
+    "update_interval": 300
+  }
+}
